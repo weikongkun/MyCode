@@ -144,7 +144,9 @@ Git支持多种传输协议：`http://`协议，`git://`协议，`SSH`传输协�
       
     git config -global alias.co checkout
   
-commit用ci来代替
+commit用ci来代替  
+
+**参考**：[http://git-scm.com](http://git-scm.com)
     
 
 
