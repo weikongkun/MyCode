@@ -5,7 +5,6 @@
 `ls -l` 等价于  `ll`
 `pwd`	  查看当前所处的路径   
 `cd`     切换目录 (cd /) ,如果不带参数则切换到用户主目录 ~
-
 `mkdir`   创建文件夹  
 `rmdir`   删除空文件夹  (只能删除空文件夹)    
 `rm -r  /a/b`  (删除非空文件夹)
@@ -17,24 +16,18 @@
 
 
 #### 删除文件 ####
-`rm filename`  (`rm -r`  删除文件夹     `rm -rf` 强制删除文件或文件夹)
-
+`rm filename`  (`rm -r`  删除文件夹     `rm -rf` 强制删除文件或文件夹) 
 移动文件  修改文件名
-`mv a/wenjian1.txt b/file1.txt`   (移动文件的同时还修改了文件名)
-
+`mv a/wenjian1.txt b/file1.txt`   (移动文件的同时还修改了文件名)  
 拷贝文件`cp srcFile destFile`
 
 #### 查看文件内容 ####
     cat wodeqingshu.txt
-`more wodeqingshu.txt` 可以分页看
-
-`less wodeqingshu.txt` 不仅可以分页，还可以方便地搜索，回翻等操作
-
+`more wodeqingshu.txt` 可以分页看    
+`less wodeqingshu.txt` 不仅可以分页，还可以方便地搜索，回翻等操作    
 `tail -10 wodeqingshu.txt`   查看文件的尾部的10行
-程序打出的日志在生产实践中具有非凡的debug的意义
-
-`tail -f user.log`   实时刷新显示文件的尾部
-
+程序打出的日志在生产实践中具有非凡的debug的意义  
+`tail -f user.log`   实时刷新显示文件的尾部    
 `head -20 wodeqingshu.txt` 查看文件的头部20行
 
 
@@ -47,10 +40,8 @@
 `chmod 567 file` 用数字也可以表示权限  
 5 --->  101 ---> r-x
 
-修改文件的所有者owner
-`chown hadoop:hadoop  file`   
-将file的所有者改成hadoop用户，所属组改成hadoop组
-
+修改文件的所有者owner`chown hadoop:hadoop  file`   
+将file的所有者改成hadoop用户，所属组改成hadoop组    
 上级目录的权限对本级文件或者文件夹的操作也有约束
 
 
@@ -65,13 +56,10 @@
 `userdel -r itcast `-----删除用户的同时删除用户的主目录
 
 #### 修改用户属性 ####
-`usermod -l b a` 将a的登陆名改为b
+`usermod -l b a` 将a的登陆名改为b      
 `usermod -g hadoop itcast0830` 将itcast0830的组改为hadoop组  
-
-`usermod -G hadoop,root itcast0830` 给itcast0830添加两个组hadoop,root  
-
-`usermod -d /home/itcast itcast0830` 将itcast0830的主目录改成/home/itcast  
-
+`usermod -G hadoop,root itcast0830` 给itcast0830添加两个组hadoop,root     
+`usermod -d /home/itcast itcast0830` 将itcast0830的主目录改成/home/itcast      
 （要事先创建itcast目录，并且拷入环境变量文件）  
 ----****----修改用户的密码`passwd itcast0830 `  
 添加用户组`groupadd beauties`   
@@ -91,13 +79,13 @@
     hadoop  ALL=(ALL)       ALL
 
 
-磁盘空间信息查看  
+#### 磁盘空间信息查看 ####
 
 `df -h`  查看磁盘空间状态信息     
 `du -sh *` 查看当前目录下所有子目录和文件的汇总大小    
 
 
-进程信息查看   
+#### 进程信息查看 ####
 
 `free`  查看内存使用状况    
 `top`   查看实时刷新的系统进程信息   
@@ -122,13 +110,10 @@
 
 ## 六、网络管理 ##
 #### 修改ip地址的配置 ####
-`vi /etc/sysconfig/network-scripts/ifcfg-eth0` 修改该配置文件即可改ip地址  
-
-**或者用setup指令通过一个带提示的伪图形界面来修改**
-
+`vi /etc/sysconfig/network-scripts/ifcfg-eth0` 修改该配置文件即可改ip地址   
+**或者用setup指令通过一个带提示的伪图形界面来修改**  
 查看ip地址
     ifconfig
-
 
 #### 修改主机名 ####
 `vi  /etc/sysconfig/network`  修改其中的hostname配置项
@@ -180,15 +165,11 @@ root权限下   `service network restart`
 **jdk**
 将安装包解压到你的安装路径下  
 `tar -xvf 压缩包 -C 目的地`   
-然后修改环境变量  `sudo vi /etc/profile`  
-
-然后  `source /etc/profile ` 来生效  
-
+然后修改环境变量  `sudo vi /etc/profile`    
+然后  `source /etc/profile ` 来生效      
 **tomcat  
-Eclipse**
-
-
-mysql
+Eclipse**   
+**mysql**   
 redhat 公司的RPM方式的包管理 也是很常用的软件包管理器
 
     rpm -qa | grep mysql
