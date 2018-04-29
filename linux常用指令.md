@@ -6,13 +6,13 @@
 `pwd`	  查看当前所处的路径   
 `cd`     切换目录 (cd /) ,如果不带参数则切换到用户主目录 ~
 
-`mkdir`   创建文件夹
-`rmdir`   删除空文件夹  (只能删除空文件夹)
+`mkdir`   创建文件夹  
+`rmdir`   删除空文件夹  (只能删除空文件夹)    
 `rm -r  /a/b`  (删除非空文件夹)
 
 ### 创建文件 ###
 `touch a.avi` 创建一个空文件
-`vi blabla.txt` 用文本编辑器编辑一个文件并且保存
+`vi blabla.txt` 用文本编辑器编辑一个文件并且保存    
 `echo "angelababy,zhen de hen xihuan ni" > qingshu.txt`  把左边的输出放到右边的文件里去 
 
 
@@ -72,24 +72,13 @@
 
 `usermod -d /home/itcast itcast0830` 将itcast0830的主目录改成/home/itcast  
 
-（要事先创建itcast目录，并且拷入环境变量文件）
-----****----修改用户的密码
-passwd itcast0830
-
-
-添加用户组
-    groupadd beauties
-
-删除用户组
-    groupdel beauties
-
-修改用户组属性
-    groupmod 
-
-查看当前登陆的身份
-    whoami
-查看当前用属的组
-    groups
+（要事先创建itcast目录，并且拷入环境变量文件）  
+----****----修改用户的密码`passwd itcast0830 `  
+添加用户组`groupadd beauties`   
+删除用户组`groupdel beauties`   
+修改用户组属性`groupmod `    
+查看当前登陆的身份`whoami`  
+查看当前用属的组`groups`
 
 
 ## 四、常见系统管理(凡是涉及到修改，就一定要用root权限) ##
@@ -104,21 +93,16 @@ passwd itcast0830
 
 磁盘空间信息查看  
 
-`df -h`  查看磁盘空间状态信息  
-
+`df -h`  查看磁盘空间状态信息     
 `du -sh *` 查看当前目录下所有子目录和文件的汇总大小    
 
 
 进程信息查看   
 
-`free`  查看内存使用状况  
-
-`top`   查看实时刷新的系统进程信息
-
-`ps -ef`  查看系统中当前瞬间的进程信息快照  
-
-`ps -ef | grep myshell.sh`  搜索myshell进程的信息  
-
+`free`  查看内存使用状况    
+`top`   查看实时刷新的系统进程信息   
+`ps -ef`  查看系统中当前瞬间的进程信息快照      
+`ps -ef | grep myshell.sh`  搜索myshell进程的信息      
 `kill -9 pid`  杀掉进程  （-9 表示强制杀死）
 
 
@@ -126,13 +110,11 @@ passwd itcast0830
 #### 1、归档 ####
     tar -cvf testdir.tar testdir/
 #### 2、压缩 ####
-`gzip testdir.tar ` 
-
+    gzip testdir.tar
     gzip  file
     bzip  file 
-
     tar -czvf  testdir.tar.gz testdir/
-`tar -xzvf testdir.tar.gz`  解压到当前目录下
+`tar -xzvf testdir.tar.gz`  解压到当前目录下    
 `tar -zxvf testdir.tar.gz -C Downloads/`   解压到指定的Downloads目录下
 
 
@@ -161,12 +143,9 @@ passwd itcast0830
 
 
 #### 重启网络服务 ####
-root权限下   `service network restart`   
-
-关闭防火墙服务  `service iptables stop`  
-
-关闭防火墙自动启动   `chkconfig iptables off`
-
+root权限下   `service network restart`     
+关闭防火墙服务  `service iptables stop`    
+关闭防火墙自动启动   `chkconfig iptables off`    
 修改系统的默认启动级别
     vi /etc/inittab
 
@@ -192,25 +171,21 @@ root权限下   `service network restart`
 
 
 ## 七、常用工具指令 ##
-`wc`   统计文本信息（行数，词数，字符数）  
-
-`date`  查看或者修改系统的日期和时间  
-
-`echo`  输出字符串或者变量的值  
-
+`wc`   统计文本信息（行数，词数，字符数）    
+`date`  查看或者修改系统的日期和时间      
+`echo`  输出字符串或者变量的值     
 `vi`   linux系统中最通用的文本编辑器
 
 ## 八、linux中的软件安装  ##
-jdk
-将安装包解压到你的安装路径下
-
-    tar -xvf 压缩包 -C 目的地
+**jdk**
+将安装包解压到你的安装路径下  
+`tar -xvf 压缩包 -C 目的地`   
 然后修改环境变量  `sudo vi /etc/profile`  
 
 然后  `source /etc/profile ` 来生效  
 
-tomcat
-Eclipse
+**tomcat  
+Eclipse**
 
 
 mysql
