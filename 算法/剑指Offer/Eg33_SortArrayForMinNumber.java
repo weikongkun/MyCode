@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 
 import java.util.Arrays;
 import java.util.Comparator;

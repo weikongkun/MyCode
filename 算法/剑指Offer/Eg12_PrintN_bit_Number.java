@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 
 public class Eg12_PrintN_bit_Number {
 	public static void main(String[] args) {

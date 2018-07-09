@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 
 public class Eg43_DicesProbability {
 	public static int times = 0;

@@ -1,76 +1,38 @@
 package com.leetCode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class E179_LargestNumber {
 
 	public static void main(String[] args) {
-		int[] nums = {3, 30, 34, 5, 9};
-		System.out.println(largestNumber(nums));
+		int[] nums = {10, 2, 234, 7, 9};
+		System.out.println(largestNumber1(nums));
 
 	}
 	
-	public static String largestNumber(int[] nums) {
-		StringBuffer sB = new StringBuffer();
-		Arrays.sort(nums);
-		for (int i : nums) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		int[] copyOfNums = Arrays.copyOf(nums, nums.length);
-		int max = 1;
-		while (max < nums[nums.length - 1])
-			max *= 10;
-		
-		for (int i = 0; i < nums.length; i++) {
-			while (10 * copyOfNums[i] < max)
-				copyOfNums[i] *= 10;
-		}
-		for (int i : copyOfNums) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		//插入排序
-		for (int i = 1; i < copyOfNums.length; i++) {
-			for (int j = i; j > 0; j--) {
-				if (copyOfNums[j - 1] >= copyOfNums[j]) {
-					swap(copyOfNums, j, j - 1);
-					swap(nums, j, j - 1);
-				}
-				else break;
+	
+	public static String largestNumber1(int[] nums) {
+		String[] strings = new String[nums.length];
+		for (int i = 0; i < nums.length; i++)
+			strings[i] = String.valueOf(nums[i]);
+		Arrays.sort(strings, new Comparator<String>() {
+
+			@Override
+			public int compare(String a, String b) {
+				// TODO Auto-generated method stub
+				String order1 = a + b;
+	            String order2 = b + a;
+	           return order2.compareTo(order1);
 			}
-		}
-		//冒泡排序
-//		for (int i = copyOfNums.length - 1; i > 0; i--) {
-//			for (int j = 0; j < i; j++) {
-//				if (copyOfNums[j] >= copyOfNums[j + 1]) {
-//					swap(copyOfNums, j, j + 1);
-//					swap(nums, j, j + 1);
-//				}
-//			}
-//		}
-		
-		System.out.println();
-		for (int i : copyOfNums) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		
-		for (int i : nums) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
-		
-		for (int i = nums.length - 1; i >= 0; i--) {
-			sB.append(nums[i]);
-		}
-		return sB.toString();
-	}
-	
-	public static void swap(int[] nums, int i, int j) {
-		int temp = nums[i] ^ nums[j];
-		nums[i] = temp ^ nums[i];
-		nums[j] = temp ^ nums[i];
-	}
+		});
+		StringBuffer sB = new StringBuffer();
+        for (String string : strings) {
+            sB.append(string);
+        }
 
+        return sB.toString();
+		
+	}
 }

@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 
 public class Eg2_Singleton1Test {
 

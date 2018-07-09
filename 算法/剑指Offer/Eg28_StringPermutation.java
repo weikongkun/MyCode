@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 import java.util.ArrayList;
 
 public class Eg28_StringPermutation {

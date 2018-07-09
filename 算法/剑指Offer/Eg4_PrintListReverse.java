@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 import java.util.*;
 public class Eg4_PrintListReverse {
 	public static void main(String[] args) {

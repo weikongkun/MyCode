@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 
 public class Eg36_InversePairs {
 	private static int[] aux;

@@ -1,4 +1,4 @@
-package JianZhiOffer;
+package com.JianZhiOffer;
 
 public class Eg2_Singleton1 implements Runnable {
 	private static Eg2_Singleton1 instance = null;
