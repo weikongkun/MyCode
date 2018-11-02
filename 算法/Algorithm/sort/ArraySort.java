@@ -155,7 +155,7 @@ public class ArraySort{
 	//======================================================
 	/*
 	 * 交换
-	 */
+	 */    
 	private static void swap(int[] arr, int i, int j) {
 		int temp = arr[i] ^ arr[j];
 		arr[i] = temp ^ arr[i];
